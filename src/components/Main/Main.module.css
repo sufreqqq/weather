@@ -1,0 +1,7 @@
+.weather{
+    display:flex
+}
+
+.weather li{
+    list-style: none;
+}
