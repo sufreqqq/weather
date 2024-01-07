@@ -2,7 +2,7 @@ import { useState, ChangeEvent } from "react";
 import useDebounce from "../../hooks/useDebounce";
 import styles from "./Main.module.css";
 import useRequest from "../../hooks/useRequest";
-import speedCalc from "../../helpers/speedCalc";
+import { speedCalc } from "../../helpers/Calc";
 
 const Main = () => {
   const [query, setQuery] = useState<string>("Domodedovo");
@@ -15,7 +15,10 @@ const Main = () => {
     setQuery(e.target.value);
   };
 
-  const [gust, wind] = speedCalc(data?.current.gust_kph, data?.current.wind_kph)
+  const [gust, wind] = speedCalc(
+    data?.current.gust_kph,
+    data?.current.wind_kph
+  );
 
   return (
     <div className={styles.main}>
@@ -26,7 +29,7 @@ const Main = () => {
         ) : (
           <div className={styles.weather}>
             <div>
-                <p>Current</p>
+              <p>Current</p>
               <li>Temp: {data?.current.temp_c} C</li>
               <li>Cloud: {data?.current.cloud}%</li>
               <li>Feels Like: {data?.current.feelslike_c} C</li>
@@ -36,14 +39,13 @@ const Main = () => {
               <li>Wind speed: {wind} m/s</li>
             </div>
             <div>
-                <p>Location</p>
-                <li>{data?.location.country}</li>
-                <li>{data?.location.localtime}</li>
-                <li>{data?.location.name}</li>
+              <p>Location</p>
+              <li>{data?.location.country}</li>
+              <li>{data?.location.localtime}</li>
+              <li>{data?.location.name}</li>
             </div>
           </div>
         )}
-        {error ? <p>Error...</p> : null}
       </div>
     </div>
   );
