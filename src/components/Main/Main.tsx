@@ -46,6 +46,7 @@ const Main = () => {
             </div>
           </div>
         )}
+        {error ? <p>Ошбика</p> : null}
       </div>
     </div>
   );
