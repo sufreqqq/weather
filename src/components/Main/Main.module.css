@@ -1,7 +1,54 @@
-.weather{
-    display:flex
+.weatherBlock{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #19191a;
+    border-radius: 1rem;
 }
 
-.weather li{
-    list-style: none;
+.weatherTemp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherTemp p{
+    white-space: nowrap;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.weatherFeelsLike{
+    font-size: 0.9rem;
+    color: grey;
+    margin-bottom: 0.25rem;
+    text-align: center;
+}
+
+.weatherCondition{
+    text-align: center;
+}
+
+.weatherBar{
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherHumidity{
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherWindDir{
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
